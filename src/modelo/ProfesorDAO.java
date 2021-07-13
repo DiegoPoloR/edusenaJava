@@ -15,10 +15,15 @@ import java.util.List;
 
 public class ProfesorDAO {
  
-     private static final String SQL_SELECT = "SELECT * FROM Profesores;";
+    //Querys del crud
+    private static final String SQL_SELECT = "SELECT * FROM Profesores;";
     private static final String SQL_INSERT = "INSERT INTO estudiantes(identificacion, nombre_estudiantes, apellido_estudiantes, nombre_acudiente, direccion_estudiantes, telefono_acudiente, nombre_cursos) VALUES(?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE estudiantes SET nombre_estudiantes = ?, apellido_estudiantes = ?, nombre_acudiente = ?, direccion_estudiantes = ?, telefono_acudiente = ?, nombre_cursos = ? WHERE identificacion = ?";
     private static final String SQL_DELETE = "DELETE FROM estudiantes WHERE identificacion = ?";
+    
+    //Querys de filtro 
+    private static final String FILTER_NOMBRE = "SELECT * FROM Profesores WHERE nombres_prof = ?"; //filtra al profesor por nombre
+    
 
     public List<Profesor> selectProfesores() {
         Connection conn = null;
@@ -70,4 +75,11 @@ public class ProfesorDAO {
         return profesores;
     }
     
+    
+   
 }
+
+
+
+
+

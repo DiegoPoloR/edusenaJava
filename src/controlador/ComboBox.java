@@ -43,9 +43,9 @@ public class ComboBox {
     //carga las opciones del comboBox para elegir al profesor 
     public void getProfesoresComboBox(){
            
-        List<Profesor>profesoresData = new ArrayList<>();
+        List<Profesor>profesoresData;
         profesoresData = profesores.selectProfesores();            
-        String optionProfesores = new String();
+        String optionProfesores;
 
           
         for(Profesor p : profesoresData){   
@@ -59,9 +59,9 @@ public class ComboBox {
    //carga las opciones del comboBox para elegir el curso
    public void getCursosComboBox(){
            
-        List<Curso>cursosData = new ArrayList<>();
+        List<Curso>cursosData;
         cursosData = cursos.selectCursos();            
-        String optionCursos= new String();
+        String optionCursos;
       
         for(Curso c : cursosData){   
             optionCursos = c.getNombre();
@@ -73,12 +73,16 @@ public class ComboBox {
     }  
     
    //devuelve el valor de la selecion del profesor
-   public int SelecionComboBoxProfesor(JComboBox<String> combox){         
+   public int SelecionComboBoxProfesor(JComboBox<String> combox){ 
+       //toma el valor elegido en el combobox
         String selectItem =  (String) combox.getSelectedItem();
        
+        //recorre cada item del array de los items 
         for(ComboItem itms : itemsProfe){  
+            //donde el item seleccionado coincida con uno de la lista
             if(selectItem == itms.getKey()){          
                 System.out.println(itms.getValue()+ ":" + itms.getKey());
+                //va a devolver el valor de ese item, la id del profesor
                 return itms.getValue();
             }                         
         }             
