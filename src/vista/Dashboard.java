@@ -80,9 +80,9 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        JPFondoMenu.setBackground(new java.awt.Color(255, 140, 80));
+        JPFondoMenu.setBackground(new java.awt.Color(242, 149, 107));
 
-        JPMenuTOP.setBackground(new java.awt.Color(252, 129, 64));
+        JPMenuTOP.setBackground(new java.awt.Color(255, 144, 103));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edusenaBlanco.png"))); // NOI18N
 
@@ -121,9 +121,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(238, 144, 96));
+        jPanel4.setBackground(new java.awt.Color(241, 155, 114));
 
-        JPInicio.setBackground(new java.awt.Color(238, 144, 96));
+        JPInicio.setBackground(new java.awt.Color(241, 155, 114));
         JPInicio.setToolTipText("");
         JPInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -165,7 +165,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(238, 144, 96));
+        jPanel5.setBackground(new java.awt.Color(241, 155, 114));
         jPanel5.setToolTipText("");
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -207,7 +207,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPProfesores.setBackground(new java.awt.Color(238, 144, 96));
+        jPProfesores.setBackground(new java.awt.Color(241, 155, 114));
         jPProfesores.setToolTipText("");
         jPProfesores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -249,7 +249,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        JPCursos.setBackground(new java.awt.Color(238, 144, 96));
+        JPCursos.setBackground(new java.awt.Color(241, 155, 114));
         JPCursos.setToolTipText("");
         JPCursos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -454,37 +454,37 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JPCursosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseExited
-        JPCursos.setBackground(new Color(238,144,96));
+        JPCursos.setBackground(new Color(241,155,114));
 
     }//GEN-LAST:event_JPCursosMouseExited
 
     private void JPCursosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseEntered
-        JPCursos.setBackground(new Color(242,132,74));
+        JPCursos.setBackground(new Color(236,183,147));
 
     }//GEN-LAST:event_JPCursosMouseEntered
 
     private void jPProfesoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseExited
-        jPProfesores.setBackground(new Color(238,144,96));
+        jPProfesores.setBackground(new Color(241,155,114));;
     }//GEN-LAST:event_jPProfesoresMouseExited
 
     private void jPProfesoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseEntered
-        jPProfesores.setBackground(new Color(242,132,74));
+       jPProfesores.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_jPProfesoresMouseEntered
 
     private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
-        jPanel5.setBackground(new Color(238,144,96));
+        jPanel5.setBackground(new Color(241,155,114));
     }//GEN-LAST:event_jPanel5MouseExited
 
     private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
-        jPanel5.setBackground(new Color(242,132,74));
+       jPanel5.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_jPanel5MouseEntered
 
     private void JPInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPInicioMouseExited
-        JPInicio.setBackground(new Color(238,144,96));
+        JPInicio.setBackground(new Color(241,155,114));
     }//GEN-LAST:event_JPInicioMouseExited
 
     private void JPInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPInicioMouseEntered
-        JPInicio.setBackground(new Color(242,132,74));
+       JPInicio.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_JPInicioMouseEntered
 
     private void JPContenedorAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JPContenedorAncestorAdded

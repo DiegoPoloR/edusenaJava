@@ -3,7 +3,6 @@ package Edusena;
 
 import vista.VentanaLogin;
 
-
 public class main {
     
     public static void main(String[] args) {

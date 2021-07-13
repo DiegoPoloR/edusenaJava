@@ -91,7 +91,7 @@
             <Container class="javax.swing.JPanel" name="JPFondoMenu">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="50" green="8c" red="ff" type="rgb"/>
+                  <Color blue="6b" green="95" red="f2" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -117,7 +117,7 @@
                 <Container class="javax.swing.JPanel" name="JPMenuTOP">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="40" green="81" red="fc" type="rgb"/>
+                      <Color blue="67" green="90" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -180,7 +180,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="60" green="90" red="ee" type="rgb"/>
+                      <Color blue="72" green="9b" red="f1" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -212,7 +212,7 @@
                     <Container class="javax.swing.JPanel" name="JPInicio">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="60" green="90" red="ee" type="rgb"/>
+                          <Color blue="72" green="9b" red="f1" type="rgb"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
@@ -274,7 +274,7 @@
                     <Container class="javax.swing.JPanel" name="jPanel5">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="60" green="90" red="ee" type="rgb"/>
+                          <Color blue="72" green="9b" red="f1" type="rgb"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
@@ -336,7 +336,7 @@
                     <Container class="javax.swing.JPanel" name="jPProfesores">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="60" green="90" red="ee" type="rgb"/>
+                          <Color blue="72" green="9b" red="f1" type="rgb"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
@@ -398,7 +398,7 @@
                     <Container class="javax.swing.JPanel" name="JPCursos">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="60" green="90" red="ee" type="rgb"/>
+                          <Color blue="72" green="9b" red="f1" type="rgb"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>

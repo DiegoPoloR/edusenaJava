@@ -26,7 +26,7 @@ public class Estudiante extends Persona{
     private ComboBox cursosCombox;
 
 
-    //para llevar datos de la vista al controlador 
+    //para llevar datos de la vista al controlador para insertar
     public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, JComboBox<String> profesorCMBX, JComboBox<String> cursoCMBX, ComboBox profesorCombox, ComboBox cursosCombox) {    
         super(identificacion, nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
@@ -36,6 +36,7 @@ public class Estudiante extends Persona{
         this.profesorCombox = profesorCombox;
         this.cursosCombox = cursosCombox;
     }
+    
 
     //para mostrar
 
@@ -58,7 +59,7 @@ public class Estudiante extends Persona{
 
     //para actualizar
 
-    public Estudiante(String nombreAcu, int telfAcu, int profesorID, int cursoID, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono) {
+    public Estudiante(String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, int profesorID, int cursoID) {
         super(nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
         this.telfAcu = telfAcu;
