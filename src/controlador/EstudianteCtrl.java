@@ -34,7 +34,7 @@ public class EstudianteCtrl {
     }
      
    
-    public void getEstudiantes(){
+    public DefaultTableModel getEstudiantes(){
            
        List<Estudiante>estudiantesData = new ArrayList<>();
        estudiantesData = estudiantes.selectEstudiantes(); 
@@ -62,11 +62,12 @@ public class EstudianteCtrl {
                 
            model.addRow(RowsEstudiantes);   
        } 
-       table.setModel(model);                   
+       table.setModel(model);   
+       return model;
     }
     
     
-    public void setEstudiantes(Estudiante e){
+    public boolean setEstudiantes(Estudiante e){
         
            //Profesor Seleccionado 
            ComboBox cmbxProf =e.getProfesorCombox();
@@ -79,19 +80,20 @@ public class EstudianteCtrl {
            //valida si los campos a ingresar estan vacios, pero solo los string, ya que los int ya se validan en el try de la vista.
            if(!e.getNombre().isEmpty() && !e.getApellidos().isEmpty() && !e.getDireccion().isEmpty() && !e.getCorreo().isEmpty() && !e.getNombreAcu().isEmpty()){
                
-               Estudiante estu = new Estudiante(e.getIdentificacion(),e.getNombre(),e.getApellidos() , e.getEdad(), e.getDireccion(), e.getGenero(), e.getCorreo(), e.getTelefono(), e.getNombreAcu(), e.getTelfAcu(), profesor, curso);
+                Estudiante estu = new Estudiante(e.getIdentificacion(),e.getNombre(),e.getApellidos() , e.getEdad(), e.getDireccion(), e.getGenero(), e.getCorreo(), e.getTelefono(), e.getNombreAcu(), e.getTelfAcu(), profesor, curso);
                 int registro = estudiantes.insertEstudiantes(estu);
-                if(registro > 0 ) 
+                if(registro > 0 ){
                     JOptionPane.showMessageDialog(null, "Datos del estudiante registrados satisfactoriamente." );
+                    return true;
+                }          
                 else 
                     JOptionPane.showMessageDialog(null, "Alguno de los datos están puesto de forma repetida." );
            }
            else JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios."); 
-           
-        
+           return false;
     }
     
-     public void updateEstudiantes(Estudiante e){
+     public boolean updateEstudiantes(Estudiante e){
          
         //Profesor Seleccionado 
         ComboBox cmbxProf =e.getProfesorCombox();
@@ -105,12 +107,15 @@ public class EstudianteCtrl {
             
             Estudiante estudiante = new Estudiante(e.getIdentificacion(),e.getNombre(), e.getApellidos(), e.getEdad(), e.getDireccion(), e.getGenero(), e.getCorreo(), e.getTelefono(),e.getNombreAcu() , e.getTelfAcu(), profesor,curso);        
             int registro = estudiantes.updateEstudiantes(estudiante);
-            if(registro > 0 ) 
+            if(registro > 0 ){ 
                 JOptionPane.showMessageDialog(null, "Datos del estudiante actualizados satisfactoriamente." );
+                return true;
+            }
             else 
                 JOptionPane.showMessageDialog(null, "Alguno de los datos están puesto de forma repetida." );    
         }
         else JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios."); 
+        return false;
         
      
      }
@@ -146,7 +151,7 @@ public class EstudianteCtrl {
     }
     
     //pasa los datos de la tabla a la vista de actualizar estudiante
-    public void setUpdateData(JTable tblEstudiantes){
+    public void setUpdateData(JTable tblEstudiantes, DefaultTableModel model){
         
         Estudiante estu = this.getUpdateDataEstudiantes(tblEstudiantes);
         if(estu != null)
@@ -154,11 +159,12 @@ public class EstudianteCtrl {
             ActualizarEstudiante vistaUpdateEstu = new ActualizarEstudiante();
             vistaUpdateEstu.setVisible(true);
             vistaUpdateEstu.setUptadeData(estu);
+            vistaUpdateEstu.setModel(model);
+            vistaUpdateEstu.setTabla(tblEstudiantes);
             
         }    
     }
-    
-    
+       
     //imprime los datos de la tabla en el formulario
      public void printDataUpdate(List<JTextField> txt, Estudiante e, List<JComboBox> cmbx, List<ComboBox> cmbxInstace){
          txt.get(0).setText(Integer.toString(e.getIdentificacion()));
@@ -182,9 +188,35 @@ public class EstudianteCtrl {
         cmbx.get(2).setSelectedItem(e.getGenero());
          
          
-     }    
+     }   
+     
+     
+    //obtiene los datos a eliminar del estudiante y los manda a funcion a eliminar 
+    public boolean getDataDeleteEstudiante(JTable tblEstudiantes){  
+        Estudiante estu;
+        int fila = tblEstudiantes.getSelectedRow();
+        if(fila == -1)JOptionPane.showMessageDialog(null,"Selecione la fila");
+        else{
+             int identificacion = Integer.parseInt((String)tblEstudiantes.getValueAt(fila, 0).toString());
+             estu = new Estudiante(identificacion);
+             boolean elimninado = this.DeleteEstudiante(estu);     
+             if(elimninado)return true;
+        }
+        return false;
+    }
     
+    //elimina a los estudiantes
+    public boolean DeleteEstudiante(Estudiante e){      
+        int registro = estudiantes.DeleteEstudiante(e);
+        if(registro > 0 ){ 
+                return true;
+            }
+            else 
+                JOptionPane.showMessageDialog(null, "Alguno de los datos están puesto de forma repetida." );       
+        return false;
+    }
     
-        
 }
+    
+ 
 

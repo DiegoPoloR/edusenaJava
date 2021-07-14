@@ -18,10 +18,10 @@ import java.util.List;
  */
 public class EstudiantesDAO {
  
-    private static final String SQL_SELECT = "SELECT  estu.identificacion_estu, estu.nombres_estu, estu.apellidos_estu, estu.edad_estu, estu.direccion_estu, estu.genero_estu, estu.correo_estu, estu.telefono_estu, estu.nombre_acu_estu, estu.telefono_acu_estu, prof.nombres_prof, prof.apellidos_prof, cur.nombre_curso FROM estudiantes estu INNER JOIN profesores prof ON estu.id_prof_estu  = prof.identificacion_prof INNER JOIN cursos cur ON estu.codigo_curso_estu = cur.codigo_curso;";
+    private static final String SQL_SELECT = "SELECT  estu.identificacion_estu, estu.nombres_estu, estu.apellidos_estu, estu.edad_estu, estu.direccion_estu, estu.genero_estu, estu.correo_estu, estu.telefono_estu, estu.nombre_acu_estu, estu.telefono_acu_estu, prof.nombres_prof, prof.apellidos_prof, cur.nombre_curso FROM estudiantes estu INNER JOIN profesores prof ON estu.id_prof_estu  = prof.identificacion_prof INNER JOIN cursos cur ON estu.codigo_curso_estu = cur.codigo_curso ORDER BY estu.nombres_estu;";
     private static final String SQL_INSERT = "INSERT INTO estudiantes(identificacion_estu,nombres_estu, apellidos_estu, edad_estu, direccion_estu, genero_estu, correo_estu, telefono_estu,nombre_acu_estu, telefono_acu_estu, id_prof_estu, codigo_curso_estu) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String SQL_UPDATE = "UPDATE estudiantes SET nombres_estu = ?, apellidos_estu = ?, edad_estu = ?, direccion_estu = ?, genero_estu = ?, correo_estu = ?, telefono_estu = ?, nombre_acu_estu = ?, telefono_acu_estu = ?, id_prof_estu = ?, codigo_curso_estu = ? WHERE identificacion_estu = ?";
-    private static final String SQL_DELETE = "DELETE FROM estudiantes WHERE identificacion = ?";
+    private static final String SQL_DELETE = "DELETE FROM estudiantes WHERE identificacion_estu = ?";
 
     public List<Estudiante> selectEstudiantes() {
         Connection conn = null;
@@ -161,41 +161,9 @@ public class EstudiantesDAO {
     }
 
     
-/*
-    public int actualizar(Estudiantes estudiante){
-        Connection conn = null;
-        PreparedStatement pstm = null;
-        int registro = 0;
 
-        try {
-            conn = Conexion.getConnection();
-            pstm = conn.prepareStatement(SQL_UPDATE);
 
-            pstm.setString(1, estudiante.getNombre());
-            pstm.setString(2, estudiante.getApellido());
-            pstm.setString(3, estudiante.getNombreAcudiente());
-            pstm.setString(4, estudiante.getDireccion());
-            pstm.setInt(5, estudiante.getTelefonoAcudiente());
-            pstm.setString(6, estudiante.getCursos());
-            pstm.setInt(7, estudiante.getIdentificacion());
-
-            //Nos regresa el numero de registros afectados.
-            registro = pstm.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace(System.out);
-        }finally {
-            try {
-                Conexion.close(pstm);
-                Conexion.close(conn);
-            } catch (SQLException e) {
-                e.printStackTrace(System.out);
-            }
-        }
-        return registro;
-    }
-
-    public int eliminar(Estudiantes estudiante){
+    public int DeleteEstudiante(Estudiante estudiante){
         Connection conn = null;
         PreparedStatement pstm = null;
         int registro = 0;
@@ -223,7 +191,7 @@ public class EstudiantesDAO {
     }
 
 
-*/
+
     
     
 }
