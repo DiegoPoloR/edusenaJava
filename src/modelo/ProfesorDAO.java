@@ -16,10 +16,12 @@ import java.util.List;
 public class ProfesorDAO {
  
     //Querys del crud
-    private static final String SQL_SELECT = "SELECT * FROM Profesores;";
-    private static final String SQL_INSERT = "INSERT INTO estudiantes(identificacion, nombre_estudiantes, apellido_estudiantes, nombre_acudiente, direccion_estudiantes, telefono_acudiente, nombre_cursos) VALUES(?, ?, ?, ?, ?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE estudiantes SET nombre_estudiantes = ?, apellido_estudiantes = ?, nombre_acudiente = ?, direccion_estudiantes = ?, telefono_acudiente = ?, nombre_cursos = ? WHERE identificacion = ?";
-    private static final String SQL_DELETE = "DELETE FROM estudiantes WHERE identificacion = ?";
+    private static final String SQL_SELECT = "SELECT * FROM Profesores ORDER BY nombres_prof;";
+    private static final String SQL_INSERT = "INSERT INTO Profesores(identificacion_prof,nombres_prof, apellidos_prof, edad_prof, direccion_prof, genero_prof, correo_prof, telefono_prof) VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String SQL_UPDATE = "UPDATE Profesores SET nombres_prof= ?, apellidos_prof = ?, edad_prof = ?, direccion_prof = ?, genero_prof = ?, correo_prof= ?, telefono_prof= ? WHERE identificacion_prof = ?";
+    private static final String SQL_DELETE = "DELETE FROM Profesores WHERE identificacion_prof = ?";
+
+
     
     //Querys de filtro 
     private static final String FILTER_NOMBRE = "SELECT * FROM Profesores WHERE nombres_prof = ?"; //filtra al profesor por nombre
@@ -74,6 +76,112 @@ public class ProfesorDAO {
         }
         return profesores;
     }
+    
+    
+    public int insertProfesor(Profesor p){
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        int registro = 0;
+        /*Estudiante(int codigo, String nombre, String apellidos, int edad, String direccion, 
+        int identificacion, String genero, String correo, int telefono, String nombreAcu, 
+        int telfAcu, String profesor, String curso)
+        */
+        try {
+            conn = Conexion.getConnection();
+            pstm = conn.prepareStatement(SQL_INSERT);
+            
+            pstm.setInt   (1, p.getIdentificacion()); 
+            pstm.setString(2, p.getNombre());        
+            pstm.setString(3, p.getApellidos()); 
+            pstm.setInt   (4, p.getEdad());
+            pstm.setString(5, p.getDireccion());  
+            pstm.setString(6, p.getGenero());
+            pstm.setString(7, p.getCorreo()); 
+            pstm.setInt   (8, p.getTelefono());
+                  
+          //Nos regresa el numero de registros afectados.
+            registro = pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        }finally {
+            try {
+                Conexion.close(pstm);
+                Conexion.close(conn);
+            } catch (SQLException e) {
+                e.printStackTrace(System.out);
+            }
+        }
+        return registro;
+        
+    }
+    
+         public int updateProfesor(Profesor profesor){
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        int registro = 0;
+        /*Estudiante(int codigo, String nombre, String apellidos, int edad, String direccion, 
+        int identificacion, String genero, String correo, int telefono, String nombreAcu, 
+        int telfAcu, String profesor, String curso)
+        */
+        try {
+            conn = Conexion.getConnection();
+            pstm = conn.prepareStatement(SQL_UPDATE);
+            
+            pstm.setString(1, profesor.getNombre());      
+            pstm.setString(2, profesor.getApellidos());   
+            pstm.setInt(3, profesor.getEdad());              
+            pstm.setString(4, profesor.getDireccion());    
+            pstm.setString(5, profesor.getGenero());         
+            pstm.setString(6, profesor.getCorreo());          
+            pstm.setInt(7, profesor.getTelefono());           
+            pstm.setInt(8, profesor.getIdentificacion()); 
+       
+            //Nos regresa el numero de registros afectados.
+            registro = pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        }finally {
+            try {
+                Conexion.close(pstm);
+                Conexion.close(conn);
+            } catch (SQLException e) {
+                e.printStackTrace(System.out);
+            }
+        }
+        return registro;
+    }
+         
+         
+    public int DeleteProfesor(Profesor profesor){
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        int registro = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstm = conn.prepareStatement(SQL_DELETE);
+
+            pstm.setInt(1, profesor.getIdentificacion());
+
+            //Nos regresa el numero de registros afectados.
+            registro = pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        }finally {
+            try {
+                Conexion.close(pstm);
+                Conexion.close(conn);
+            } catch (SQLException e) {
+                e.printStackTrace(System.out);
+            }
+        }
+        return registro;
+    }
+    
+
     
     
    

@@ -6,6 +6,7 @@
 package modelo;
 
 import controlador.ComboBox;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -15,34 +16,56 @@ public class Curso {
     
     private int codigo; 
     private String nombre;
-    private int Cantidad; 
+    private int cantidad; 
     private String nomProfesor;
     private int profesorID;
+    private JComboBox<String> CMBOXProfe;  
+    private ComboBox comboxProfe;
     
-    private ComboBox ProfesorComboBox;
-
+    
+    //para pasar datos del vista al controlador de agregar curso
+    public Curso(int codigo, String nombre, JComboBox<String> CMBOXProfe, ComboBox comboxProfe) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.nomProfesor = nomProfesor;
+        this.CMBOXProfe = CMBOXProfe;
+        this.comboxProfe = comboxProfe;
+    }
+    
+   //para pasar datos del vista al controlador de actualizar curso 
+   public Curso(int codigo, String nombre, int Cantidad, JComboBox<String> CMBOXProfe, ComboBox comboxProfe) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.cantidad = Cantidad;
+        this.nomProfesor = nomProfesor;
+        this.CMBOXProfe = CMBOXProfe;
+        this.comboxProfe = comboxProfe;
+      
+    }
+    
+    
     //para mostrar 
     public Curso(int codigo, String nombre, int Cantidad, String nomProfesor) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.Cantidad = Cantidad;
+        this.cantidad = Cantidad;
         this.nomProfesor = nomProfesor;
     }
     
     //para insertar 
-    public Curso(int codigo, String nombre, int Cantidad, int ProfesorID) {
+    public Curso(int codigo, String nombre, int profesorID) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.Cantidad = Cantidad;
         this.profesorID = profesorID;
     }
 
     
     
     //para actualizar
-    public Curso(String nombre, int Cantidad, int ProfesorID) {
+    public Curso(int codigo, String nombre, int Cantidad, int ProfesorID) {
+        this.codigo = codigo;
         this.nombre = nombre;
-        this.Cantidad = Cantidad;
+        this.cantidad = Cantidad;
         this.profesorID = ProfesorID;
     }
 
@@ -69,11 +92,11 @@ public class Curso {
     }
 
     public int getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int Cantidad) {
-        this.Cantidad = Cantidad;
+        this.cantidad = Cantidad;
     }
 
     public String getNomProfesor() {
@@ -90,6 +113,22 @@ public class Curso {
 
     public void setProfesorID(int profesorID) {
         this.profesorID = profesorID;
+    }
+
+    public JComboBox<String> getCMBOXProfe() {
+        return CMBOXProfe;
+    }
+
+    public void setCMBOXProfe(JComboBox<String> CMBOXProfe) {
+        this.CMBOXProfe = CMBOXProfe;
+    }
+
+    public ComboBox getComboxProfe() {
+        return comboxProfe;
+    }
+
+    public void setComboxProfe(ComboBox comboxProfe) {
+        this.comboxProfe = comboxProfe;
     }
     
     

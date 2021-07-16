@@ -22,7 +22,10 @@ public class EstudiantesDAO {
     private static final String SQL_INSERT = "INSERT INTO estudiantes(identificacion_estu,nombres_estu, apellidos_estu, edad_estu, direccion_estu, genero_estu, correo_estu, telefono_estu,nombre_acu_estu, telefono_acu_estu, id_prof_estu, codigo_curso_estu) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String SQL_UPDATE = "UPDATE estudiantes SET nombres_estu = ?, apellidos_estu = ?, edad_estu = ?, direccion_estu = ?, genero_estu = ?, correo_estu = ?, telefono_estu = ?, nombre_acu_estu = ?, telefono_acu_estu = ?, id_prof_estu = ?, codigo_curso_estu = ? WHERE identificacion_estu = ?";
     private static final String SQL_DELETE = "DELETE FROM estudiantes WHERE identificacion_estu = ?";
+    private static final String FILTER_CURSO = "SELECT  estu.identificacion_estu, estu.nombres_estu, estu.apellidos_estu, estu.edad_estu, estu.direccion_estu, estu.genero_estu, estu.correo_estu, estu.telefono_estu, estu.nombre_acu_estu, estu.telefono_acu_estu, prof.nombres_prof, prof.apellidos_prof, cur.nombre_curso FROM estudiantes estu INNER JOIN profesores prof ON estu.id_prof_estu  = prof.identificacion_prof INNER JOIN cursos cur ON estu.codigo_curso_estu = cur.codigo_curso WHERE codigo_curso = ? ORDER BY estu.nombres_estu;";
+    private static final String FILTER_PROFE = "SELECT  estu.identificacion_estu, estu.nombres_estu, estu.apellidos_estu, estu.edad_estu, estu.direccion_estu, estu.genero_estu, estu.correo_estu, estu.telefono_estu, estu.nombre_acu_estu, estu.telefono_acu_estu, prof.nombres_prof, prof.apellidos_prof, cur.nombre_curso FROM estudiantes estu INNER JOIN profesores prof ON estu.id_prof_estu  = prof.identificacion_prof INNER JOIN cursos cur ON estu.codigo_curso_estu = cur.codigo_curso WHERE identificacion_prof = ? ORDER BY estu.nombres_estu;";
 
+    
     public List<Estudiante> selectEstudiantes() {
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -40,7 +43,7 @@ public class EstudiantesDAO {
             pstm = conn.prepareStatement(SQL_SELECT);
             // Ejecuta la consulta
             rs = pstm.executeQuery();
-
+            System.out.println("result " + rs.next());
             while ( rs.next() ) {
                 int identificacionEstudiante = rs.getInt("identificacion_estu");
                 String nombreEstudiante = rs.getString("nombres_estu");
@@ -55,7 +58,6 @@ public class EstudiantesDAO {
                 String nombreCurso = rs.getString("nombre_curso");
                 String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
                 
-                System.out.println(direccionEstudiante);
 
                 //Llamamos al constructor Estudiantes de la entidad
                 estudiante =  new Estudiante(identificacionEstudiante, nombreEstudiante, apellidoEstudiante, edadEstudiante, direccionEstudiante, generoEstudiante, correoEstudiante, telefonoEstudiante, nombreAcudiente, telefonoAcudiente , nombreProfesor, nombreCurso);
@@ -89,7 +91,6 @@ public class EstudiantesDAO {
             conn = Conexion.getConnection();
             pstm = conn.prepareStatement(SQL_INSERT);
             
-            System.out.println(estudiante.getEdad());
             pstm.setInt(1, estudiante.getIdentificacion()); 
             pstm.setString(2, estudiante.getNombre());      
             pstm.setString(3, estudiante.getApellidos());   
@@ -191,7 +192,119 @@ public class EstudiantesDAO {
     }
 
 
+    public List<Estudiante> filtarPorCurso(int idCurso) {
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
 
+        // Instancio la entidad Estudiantes.
+        Estudiante estudiante = null;
+       
+        List<Estudiante> estudiantes = new ArrayList<>();
+
+        try {
+            //Llamamos el método getConnection() que realiza la conexión a la base de datos.
+            conn = Conexion.getConnection();
+            //Mandamos con el método prepareStatement(sql) 
+            pstm = conn.prepareStatement(FILTER_CURSO);
+            
+            pstm.setInt(1, idCurso); 
+            // Ejecuta la consulta
+            rs = pstm.executeQuery();
+                     
+            while (rs.next()) {
+                
+                int identificacionEstudiante = rs.getInt("identificacion_estu");
+                
+                String nombreEstudiante = rs.getString("nombres_estu");
+                String apellidoEstudiante = rs.getString("apellidos_estu");
+                int edadEstudiante = rs.getInt("edad_estu");
+                String direccionEstudiante = rs.getString("direccion_estu");                       
+                String generoEstudiante = rs.getString("genero_estu"); 
+                String correoEstudiante = rs.getString("correo_estu");
+                int telefonoEstudiante = rs.getInt("telefono_estu");                          
+                String nombreAcudiente = rs.getString("nombre_acu_estu");
+                int telefonoAcudiente = rs.getInt("telefono_acu_estu");
+                String nombreCurso = rs.getString("nombre_curso");
+                String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
+                
+              
+               //Llamamos al constructor Estudiantes de la entidad
+                estudiante =  new Estudiante(identificacionEstudiante, nombreEstudiante, apellidoEstudiante, edadEstudiante, direccionEstudiante, generoEstudiante, correoEstudiante, telefonoEstudiante, nombreAcudiente, telefonoAcudiente , nombreProfesor, nombreCurso);
+                //Agrego la entidad (un estudiante) a un ArrayList<>();
+                estudiantes.add(estudiante);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+        finally {
+            try {
+                Conexion.close(rs);
+                Conexion.close(pstm);
+                Conexion.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return estudiantes;
+    }
+    
+    
+     public List<Estudiante> filtarPorProfesor(int idProf) {
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+
+        // Instancio la entidad Estudiantes.
+        Estudiante estudiante = null;
+
+        List<Estudiante> estudiantes = new ArrayList<>();
+
+        try {
+            //Llamamos el método getConnection() que realiza la conexión a la base de datos.
+            conn = Conexion.getConnection();
+            //Mandamos con el método prepareStatement(sql) 
+            pstm = conn.prepareStatement(FILTER_PROFE);
+            pstm.setInt(1, idProf); 
+            // Ejecuta la consulta
+            rs = pstm.executeQuery();
+
+            while ( rs.next() ) {
+                int identificacionEstudiante = rs.getInt("identificacion_estu");
+                String nombreEstudiante = rs.getString("nombres_estu");
+                String apellidoEstudiante = rs.getString("apellidos_estu");
+                int edadEstudiante = rs.getInt("edad_estu");
+                String direccionEstudiante = rs.getString("direccion_estu");                       
+                String generoEstudiante = rs.getString("genero_estu"); 
+                String correoEstudiante = rs.getString("correo_estu");
+                int telefonoEstudiante = rs.getInt("telefono_estu");                          
+                String nombreAcudiente = rs.getString("nombre_acu_estu");
+                int telefonoAcudiente = rs.getInt("telefono_acu_estu");
+                String nombreCurso = rs.getString("nombre_curso");
+                String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
+                
+                System.out.println(direccionEstudiante);
+
+                //Llamamos al constructor Estudiantes de la entidad
+                estudiante =  new Estudiante(identificacionEstudiante, nombreEstudiante, apellidoEstudiante, edadEstudiante, direccionEstudiante, generoEstudiante, correoEstudiante, telefonoEstudiante, nombreAcudiente, telefonoAcudiente , nombreProfesor, nombreCurso);
+                //Agrego la entidad (un estudiante) a un ArrayList<>();
+                estudiantes.add(estudiante);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+        finally {
+            try {
+                Conexion.close(rs);
+                Conexion.close(pstm);
+                Conexion.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return estudiantes;
+    }
+    
     
     
 }
