@@ -55,12 +55,13 @@ public class EliminarCurso extends javax.swing.JFrame {
         fondoEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         JpBg.setBackground(new java.awt.Color(255, 255, 255));
         JpBg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 102)));
         JpBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AlterJpHeader.setBackground(new java.awt.Color(255, 153, 102));
+        AlterJpHeader.setBackground(new java.awt.Color(250, 125, 85));
         AlterJpHeader.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 AlterJpHeaderMouseDragged(evt);

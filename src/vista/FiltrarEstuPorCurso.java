@@ -42,7 +42,9 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
         btnFiltrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
+        JPCurso.setBackground(new java.awt.Color(255, 255, 255));
         JPCurso.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -52,66 +54,46 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        JPCurso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        CMBXCurso.setBorder(null);
+        JPCurso.add(CMBXCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         jLabel4.setText("Curso:");
+        JPCurso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, 40));
 
+        btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
+        btnCancelar.setFont(new java.awt.Font("Roboto", 1, 11)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
+        JPCurso.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 123, 80, 30));
 
+        btnFiltrar.setBackground(new java.awt.Color(250, 125, 85));
+        btnFiltrar.setFont(new java.awt.Font("Roboto", 1, 11)); // NOI18N
+        btnFiltrar.setForeground(new java.awt.Color(255, 255, 255));
         btnFiltrar.setText("Filtrar");
         btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFiltrarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout JPCursoLayout = new javax.swing.GroupLayout(JPCurso);
-        JPCurso.setLayout(JPCursoLayout);
-        JPCursoLayout.setHorizontalGroup(
-            JPCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPCursoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(JPCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(JPCursoLayout.createSequentialGroup()
-                        .addComponent(btnCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnFiltrar))
-                    .addGroup(JPCursoLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(31, 31, 31)
-                        .addComponent(CMBXCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        JPCursoLayout.setVerticalGroup(
-            JPCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPCursoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(JPCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(CMBXCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(JPCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFiltrar)
-                    .addComponent(btnCancelar)))
-        );
+        JPCurso.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 123, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JPCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(JPCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JPCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(JPCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
         );
 
         pack();

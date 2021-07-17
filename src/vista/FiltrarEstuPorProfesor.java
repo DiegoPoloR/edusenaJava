@@ -45,6 +45,7 @@ public class FiltrarEstuPorProfesor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        JPProfesor.setBackground(new java.awt.Color(255, 255, 255));
         JPProfesor.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }

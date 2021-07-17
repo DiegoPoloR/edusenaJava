@@ -30,6 +30,7 @@ public class EliminarProfesor extends javax.swing.JFrame {
      */
     public EliminarProfesor() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -77,12 +78,13 @@ public class EliminarProfesor extends javax.swing.JFrame {
         fondoEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         JpBg.setBackground(new java.awt.Color(255, 255, 255));
         JpBg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 102)));
         JpBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AlterJpHeader.setBackground(new java.awt.Color(255, 153, 102));
+        AlterJpHeader.setBackground(new java.awt.Color(250, 125, 85));
         AlterJpHeader.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 AlterJpHeaderMouseDragged(evt);
@@ -141,6 +143,7 @@ public class EliminarProfesor extends javax.swing.JFrame {
         txtAlertaa1.setText("Eliminar Estudiante");
         JpBg.add(txtAlertaa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 390, 40));
 
+        btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -152,6 +155,7 @@ public class EliminarProfesor extends javax.swing.JFrame {
         });
         JpBg.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 120, 30));
 
+        fondoCancelar.setBackground(new java.awt.Color(250, 125, 85));
         fondoCancelar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         fondoCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Norm.png"))); // NOI18N
         fondoCancelar.setBorder(null);

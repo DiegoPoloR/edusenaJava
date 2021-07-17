@@ -54,6 +54,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         fondoEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         JpBg.setBackground(new java.awt.Color(255, 255, 255));
         JpBg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 102)));
