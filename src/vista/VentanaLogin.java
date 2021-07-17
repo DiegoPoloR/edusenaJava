@@ -30,6 +30,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         JpBackground = new javax.swing.JPanel();
         JpHeader = new javax.swing.JPanel();
         txtJpExitBtn = new javax.swing.JLabel();
@@ -37,24 +38,21 @@ public class VentanaLogin extends javax.swing.JFrame {
         JpExitBtn = new javax.swing.JPanel();
         JpMinBtN = new javax.swing.JPanel();
         JpSecondBg = new javax.swing.JPanel();
-        JpSenaIcon = new javax.swing.JLabel();
         txtDescription = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
-        Jsepusername = new javax.swing.JSeparator();
         JpUserName = new javax.swing.JLabel();
-        JsePassword = new javax.swing.JSeparator();
         JpPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         JCheckShowPassword = new javax.swing.JCheckBox();
         JpLoginBtn = new javax.swing.JPanel();
         btnLogin = new javax.swing.JLabel();
-        JpUser = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         Bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+
+        jLabel1.setText("jLabel1");
 
         JpBackground.setBackground(new java.awt.Color(255, 255, 255));
         JpBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,7 +87,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                 txtJpExitBtnMouseExited(evt);
             }
         });
-        JpHeader.add(txtJpExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 0, 40, 35));
+        JpHeader.add(txtJpExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, 40, 35));
 
         txtJpMinBtN.setBackground(new java.awt.Color(225, 225, 225));
         txtJpMinBtN.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
@@ -107,7 +105,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                 txtJpMinBtNMouseExited(evt);
             }
         });
-        JpHeader.add(txtJpMinBtN, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, 40, 35));
+        JpHeader.add(txtJpMinBtN, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 0, 40, 35));
 
         JpExitBtn.setForeground(new java.awt.Color(255, 255, 255));
         JpExitBtn.setOpaque(false);
@@ -131,7 +129,7 @@ public class VentanaLogin extends javax.swing.JFrame {
             .addGap(0, 35, Short.MAX_VALUE)
         );
 
-        JpHeader.add(JpExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 0, -1, -1));
+        JpHeader.add(JpExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, -1, -1));
 
         JpMinBtN.setBackground(new java.awt.Color(226, 226, 226));
         JpMinBtN.setOpaque(false);
@@ -147,52 +145,40 @@ public class VentanaLogin extends javax.swing.JFrame {
             .addGap(0, 35, Short.MAX_VALUE)
         );
 
-        JpHeader.add(JpMinBtN, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, -1, -1));
+        JpHeader.add(JpMinBtN, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 0, -1, -1));
 
-        JpBackground.add(JpHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 40));
+        JpBackground.add(JpHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 40));
 
         JpSecondBg.setBackground(new java.awt.Color(252, 252, 252));
         JpSecondBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JpSenaIcon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        JpSenaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JpSenaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/faviconSena2.png"))); // NOI18N
-        JpSenaIcon.setText("  Login");
-        JpSecondBg.add(JpSenaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 180, 100));
+        txtDescription.setFont(new java.awt.Font("Roboto Black", 1, 55)); // NOI18N
+        txtDescription.setForeground(new java.awt.Color(250, 125, 85));
+        txtDescription.setText("Iniciar sesión");
+        JpSecondBg.add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 380, 90));
 
-        txtDescription.setFont(new java.awt.Font("Roboto Light", 0, 15)); // NOI18N
-        txtDescription.setForeground(new java.awt.Color(153, 153, 153));
-        txtDescription.setText("Bienvenido devuelta apreciado usuario");
-        JpSecondBg.add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 350, 50));
-
-        txtUserName.setBackground(new java.awt.Color(252, 252, 252));
-        txtUserName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUserName.setBackground(new java.awt.Color(244, 244, 244));
+        txtUserName.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         txtUserName.setBorder(null);
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserNameActionPerformed(evt);
             }
         });
-        JpSecondBg.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 360, 30));
+        JpSecondBg.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 450, 50));
 
-        Jsepusername.setForeground(new java.awt.Color(0, 0, 0));
-        JpSecondBg.add(Jsepusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 360, 20));
-
-        JpUserName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        JpUserName.setForeground(new java.awt.Color(102, 102, 102));
+        JpUserName.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JpUserName.setForeground(new java.awt.Color(153, 153, 153));
         JpUserName.setText("Username");
-        JpSecondBg.add(JpUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 80, 20));
+        JpSecondBg.add(JpUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 120, 20));
 
-        JsePassword.setForeground(new java.awt.Color(0, 0, 0));
-        JpSecondBg.add(JsePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 360, 20));
-
-        JpPassword.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        JpPassword.setForeground(new java.awt.Color(102, 102, 102));
+        JpPassword.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JpPassword.setForeground(new java.awt.Color(153, 153, 153));
         JpPassword.setText("Password");
-        JpSecondBg.add(JpPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 160, 20));
+        JpSecondBg.add(JpPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 160, 20));
 
-        txtPassword.setBackground(new java.awt.Color(252, 252, 252));
-        txtPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtPassword.setBackground(new java.awt.Color(244, 244, 244));
+        txtPassword.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         txtPassword.setBorder(null);
         txtPassword.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
@@ -203,10 +189,11 @@ public class VentanaLogin extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        JpSecondBg.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 360, 30));
+        JpSecondBg.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 450, 50));
 
         JCheckShowPassword.setBackground(new java.awt.Color(255, 255, 255));
-        JCheckShowPassword.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        JCheckShowPassword.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        JCheckShowPassword.setForeground(new java.awt.Color(153, 153, 153));
         JCheckShowPassword.setText("  Show Password");
         JCheckShowPassword.setBorder(null);
         JCheckShowPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -214,12 +201,12 @@ public class VentanaLogin extends javax.swing.JFrame {
                 JCheckShowPasswordActionPerformed(evt);
             }
         });
-        JpSecondBg.add(JCheckShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, -1, 30));
+        JpSecondBg.add(JCheckShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 130, 30));
 
-        JpLoginBtn.setBackground(new java.awt.Color(255, 153, 102));
+        JpLoginBtn.setBackground(new java.awt.Color(250, 125, 85));
         JpLoginBtn.setLayout(new java.awt.BorderLayout());
 
-        btnLogin.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnLogin.setText("LOGIN");
@@ -231,41 +218,33 @@ public class VentanaLogin extends javax.swing.JFrame {
         });
         JpLoginBtn.add(btnLogin, java.awt.BorderLayout.CENTER);
 
-        JpSecondBg.add(JpLoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, 170, 30));
+        JpSecondBg.add(JpLoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 350, 50));
 
-        JpBackground.add(JpSecondBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 680, 680));
+        JpBackground.add(JpSecondBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 670, 680));
 
-        JpUser.setOpaque(false);
-
-        javax.swing.GroupLayout JpUserLayout = new javax.swing.GroupLayout(JpUser);
-        JpUser.setLayout(JpUserLayout);
-        JpUserLayout.setHorizontalGroup(
-            JpUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JpUserLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        JpUserLayout.setVerticalGroup(
-            JpUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpUserLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        JpBackground.add(JpUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 200, 200));
-
-        Bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/b2.png"))); // NOI18N
-        JpBackground.add(Bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 680));
+        Bg.setBackground(new java.awt.Color(51, 255, 51));
+        Bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg5.jpg"))); // NOI18N
+        JpBackground.add(Bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JpBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JpBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 1220, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(JpBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -410,13 +389,9 @@ public class VentanaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel JpMinBtN;
     private javax.swing.JLabel JpPassword;
     private javax.swing.JPanel JpSecondBg;
-    private javax.swing.JLabel JpSenaIcon;
-    private javax.swing.JPanel JpUser;
     private javax.swing.JLabel JpUserName;
-    private javax.swing.JSeparator JsePassword;
-    private javax.swing.JSeparator Jsepusername;
     private javax.swing.JLabel btnLogin;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel txtDescription;
     private javax.swing.JLabel txtJpExitBtn;
     private javax.swing.JLabel txtJpMinBtN;
