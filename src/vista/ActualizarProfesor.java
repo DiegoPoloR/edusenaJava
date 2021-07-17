@@ -52,7 +52,6 @@ public class ActualizarProfesor extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
         CMBXGenero = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -66,12 +65,15 @@ public class ActualizarProfesor extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
         Contenedor.setBackground(new java.awt.Color(255, 255, 255));
+        Contenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 125, 85)));
         Contenedor.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -85,65 +87,60 @@ public class ActualizarProfesor extends javax.swing.JFrame {
 
         txtEdad.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 150, 30));
+        Contenedor.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 150, 30));
 
         txtDireccion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 150, 30));
+        Contenedor.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("Dirección:");
-        Contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 30));
+        Contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, 30));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("Identificación:");
-        Contenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 30));
+        Contenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("Genero:");
-        Contenedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(250, 125, 85));
-        jLabel2.setText("Actualizar Profesor");
-        Contenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        Contenedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, 30));
 
         txtIdentificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 150, 30));
+        Contenedor.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 150, 30));
 
         CMBXGenero.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         CMBXGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         CMBXGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(CMBXGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 150, 30));
+        Contenedor.add(CMBXGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("Nombres:");
-        Contenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 30));
+        Contenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, 30));
 
         txtCorreo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 150, 30));
+        Contenedor.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 150, 30));
 
         txtNombres.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtNombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 150, 30));
+        Contenedor.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 150, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setText("Correo:");
-        Contenedor.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 30));
+        Contenedor.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("Apellidos:");
-        Contenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 30));
+        Contenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel9.setText("Telefono:");
-        Contenedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, 30));
+        Contenedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, -1, 30));
 
         txtApellidos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtApellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 150, 30));
+        Contenedor.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 150, 30));
 
         txtTelefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -152,11 +149,11 @@ public class ActualizarProfesor extends javax.swing.JFrame {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        Contenedor.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 150, 30));
+        Contenedor.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 150, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel5.setText("Edad:");
-        Contenedor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 30));
+        Contenedor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 30));
 
         btnActualizar.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -167,7 +164,7 @@ public class ActualizarProfesor extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        Contenedor.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 110, 30));
+        Contenedor.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, 110, 30));
 
         btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -178,17 +175,37 @@ public class ActualizarProfesor extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        Contenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 110, 30));
+        Contenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 110, 30));
+
+        jPanel2.setBackground(new java.awt.Color(250, 125, 85));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Actualizar Profesor");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+        );
+
+        Contenedor.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Contenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(Contenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(Contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();
@@ -299,6 +316,7 @@ public class ActualizarProfesor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;

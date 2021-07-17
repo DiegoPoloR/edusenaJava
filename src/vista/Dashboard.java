@@ -112,10 +112,10 @@ public class Dashboard extends javax.swing.JFrame {
         txtUsuario.setText("Usuario");
         jPanel6.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 46, 116, -1));
 
-        txtFecha.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        txtFecha.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(255, 255, 255));
         txtFecha.setText("Fecha");
-        jPanel6.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel6.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 80, 280, -1));
 
         btnExit.setBackground(new java.awt.Color(252, 140, 105));
 
@@ -690,7 +690,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lblSalir;
-    private javax.swing.JTabbedPane tabContSesiones;
+    public javax.swing.JTabbedPane tabContSesiones;
     private javax.swing.JLabel txtFecha;
     private javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables

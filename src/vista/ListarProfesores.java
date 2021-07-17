@@ -48,10 +48,9 @@ public class ListarProfesores extends javax.swing.JPanel {
         btnRecargar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblProfesores.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tblProfesores.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        tblProfesores.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tblProfesores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -69,7 +68,12 @@ public class ListarProfesores extends javax.swing.JPanel {
             }
         });
         tblProfesores.setGridColor(new java.awt.Color(255, 255, 255));
-        tblProfesores.setSelectionBackground(new java.awt.Color(249, 158, 129));
+        tblProfesores.setOpaque(false);
+        tblProfesores.setSelectionBackground(new java.awt.Color(250, 125, 85));
+        tblProfesores.setSelectionForeground(new java.awt.Color(251, 251, 251));
+        tblProfesores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblProfesores.getTableHeader().setResizingAllowed(false);
+        tblProfesores.getTableHeader().setReorderingAllowed(false);
         tblProfesores.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -91,8 +95,6 @@ public class ListarProfesores extends javax.swing.JPanel {
             tblProfesores.getColumnModel().getColumn(7).setResizable(false);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 890, 440));
-
         jButton1.setBackground(new java.awt.Color(250, 125, 85));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +105,6 @@ public class ListarProfesores extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 35));
 
         btnActualizar.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -115,7 +116,6 @@ public class ListarProfesores extends javax.swing.JPanel {
                 btnActualizarActionPerformed(evt);
             }
         });
-        add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 110, 35));
 
         btnActualizar1.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -127,7 +127,6 @@ public class ListarProfesores extends javax.swing.JPanel {
                 btnActualizar1ActionPerformed(evt);
             }
         });
-        add(btnActualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 110, 35));
 
         btnRecargar.setBackground(new java.awt.Color(250, 125, 85));
         btnRecargar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -139,7 +138,37 @@ public class ListarProfesores extends javax.swing.JPanel {
                 btnRecargarActionPerformed(evt);
             }
         });
-        add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 110, 35));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnActualizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 890, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblProfesoresAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblProfesoresAncestorAdded

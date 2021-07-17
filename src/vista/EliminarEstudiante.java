@@ -60,7 +60,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         JpBg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 102)));
         JpBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AlterJpHeader.setBackground(new java.awt.Color(255, 153, 102));
+        AlterJpHeader.setBackground(new java.awt.Color(250, 125, 85));
         AlterJpHeader.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 AlterJpHeaderMouseDragged(evt);
@@ -111,13 +111,13 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         txtAlertaa.setForeground(new java.awt.Color(102, 102, 102));
         txtAlertaa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtAlertaa.setText("¿Está seguro que desea eliminar a este estudinate?");
-        JpBg.add(txtAlertaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 390, 40));
+        JpBg.add(txtAlertaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 450, 40));
 
         txtAlertaa1.setFont(new java.awt.Font("Roboto", 1, 25)); // NOI18N
         txtAlertaa1.setForeground(new java.awt.Color(51, 51, 51));
         txtAlertaa1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtAlertaa1.setText("Eliminar Estudiante");
-        JpBg.add(txtAlertaa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 390, 40));
+        JpBg.add(txtAlertaa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 450, 40));
 
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,7 +128,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
                 btnCancelarMouseClicked(evt);
             }
         });
-        JpBg.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 120, 30));
+        JpBg.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 120, 30));
 
         fondoCancelar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         fondoCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Norm.png"))); // NOI18N
@@ -138,7 +138,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         fondoCancelar.setFocusPainted(false);
         fondoCancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Press.png"))); // NOI18N
         fondoCancelar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Hover.png"))); // NOI18N
-        JpBg.add(fondoCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 120, 30));
+        JpBg.add(fondoCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 120, 30));
 
         btnEliminar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,7 +150,7 @@ public class EliminarEstudiante extends javax.swing.JFrame {
                 btnEliminarMouseClicked(evt);
             }
         });
-        JpBg.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 120, 30));
+        JpBg.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 120, 30));
 
         fondoEliminar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         fondoEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Norm.png"))); // NOI18N
@@ -158,8 +158,8 @@ public class EliminarEstudiante extends javax.swing.JFrame {
         fondoEliminar.setBorderPainted(false);
         fondoEliminar.setContentAreaFilled(false);
         fondoEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Press.png"))); // NOI18N
-        fondoEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Hover.png"))); // NOI18N
-        JpBg.add(fondoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 120, 30));
+        fondoEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/btn2Norm.png"))); // NOI18N
+        JpBg.add(fondoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

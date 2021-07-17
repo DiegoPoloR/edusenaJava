@@ -75,19 +75,19 @@ public class ActualizarCurso extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("Nombre:");
-        JPContenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 30));
+        JPContenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, 30));
 
         txtNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        JPContenedor.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 30));
+        JPContenedor.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 150, 30));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel12.setText("Profesor:");
-        JPContenedor.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 30));
+        JPContenedor.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, 30));
 
         CMBXProfesor.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         CMBXProfesor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        JPContenedor.add(CMBXProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 150, 30));
+        JPContenedor.add(CMBXProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 150, 30));
 
         btnActualizar.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -98,7 +98,7 @@ public class ActualizarCurso extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        JPContenedor.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 110, 30));
+        JPContenedor.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, 110, 30));
 
         btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -109,20 +109,21 @@ public class ActualizarCurso extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        JPContenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 110, 30));
+        JPContenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("Codigo:");
-        JPContenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 30));
+        JPContenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, 30));
 
         txtCodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCodigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        JPContenedor.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 150, 30));
+        JPContenedor.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, 30));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(250, 125, 85));
 
+        jLabel2.setBackground(new java.awt.Color(250, 125, 85));
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(250, 125, 85));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Actualizar Curso");
 
@@ -130,20 +131,18 @@ public class ActualizarCurso extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
-        JPContenedor.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        JPContenedor.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 80));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("Cantidad:");
-        JPContenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, 30));
+        JPContenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, 30));
 
         txtCantidad.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -152,17 +151,17 @@ public class ActualizarCurso extends javax.swing.JFrame {
                 txtCantidadActionPerformed(evt);
             }
         });
-        JPContenedor.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, 30));
+        JPContenedor.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 150, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();

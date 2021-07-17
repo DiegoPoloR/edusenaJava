@@ -66,7 +66,6 @@ public class AgregarEstudiante extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
         CMBXGenero = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -88,10 +87,13 @@ public class AgregarEstudiante extends javax.swing.JFrame {
         CMBXCurso = new javax.swing.JComboBox<>();
         btnAñadir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Contenedor.setBackground(new java.awt.Color(255, 255, 255));
+        Contenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 125, 85)));
         Contenedor.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -105,65 +107,60 @@ public class AgregarEstudiante extends javax.swing.JFrame {
 
         txtEdad.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 150, 30));
+        Contenedor.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 150, 30));
 
         txtDireccion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 150, 30));
+        Contenedor.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("Dirección:");
-        Contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 30));
+        Contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, 30));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("Identificación:");
-        Contenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 30));
+        Contenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("Genero:");
-        Contenedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 30));
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(250, 125, 85));
-        jLabel2.setText("Añadir Estudiante");
-        Contenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        Contenedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, 30));
 
         txtIdentificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 150, 30));
+        Contenedor.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 150, 30));
 
         CMBXGenero.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         CMBXGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         CMBXGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(CMBXGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 150, 30));
+        Contenedor.add(CMBXGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("Nombres:");
-        Contenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 30));
+        Contenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 30));
 
         txtCorreo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 150, 30));
+        Contenedor.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 150, 30));
 
         txtNombres.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtNombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 150, 30));
+        Contenedor.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 150, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setText("Correo:");
-        Contenedor.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 30));
+        Contenedor.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("Apellidos:");
-        Contenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 30));
+        Contenedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel9.setText("Telefono:");
-        Contenedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 30));
+        Contenedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 30));
 
         txtApellidos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtApellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, 30));
+        Contenedor.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 150, 30));
 
         txtTelefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -172,15 +169,15 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        Contenedor.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 150, 30));
+        Contenedor.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 150, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel5.setText("Edad:");
-        Contenedor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 30));
+        Contenedor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Acudiente:");
-        Contenedor.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 30));
+        Contenedor.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, 30));
 
         txtAcudiente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtAcudiente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -189,11 +186,11 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 txtAcudienteActionPerformed(evt);
             }
         });
-        Contenedor.add(txtAcudiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 150, 30));
+        Contenedor.add(txtAcudiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 150, 30));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Telf. Acudiente:");
-        Contenedor.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, 30));
+        Contenedor.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, 30));
 
         txtTelfAcu.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtTelfAcu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -202,23 +199,23 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 txtTelfAcuActionPerformed(evt);
             }
         });
-        Contenedor.add(txtTelfAcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 150, 30));
+        Contenedor.add(txtTelfAcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 150, 30));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel12.setText("Profesor:");
-        Contenedor.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, 30));
+        Contenedor.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, -1, 30));
 
         CMBXProfesor.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         CMBXProfesor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(CMBXProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 150, 30));
+        Contenedor.add(CMBXProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 150, 30));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Curso:");
-        Contenedor.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, 30));
+        Contenedor.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, -1, 30));
 
         CMBXCurso.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         CMBXCurso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        Contenedor.add(CMBXCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 150, 30));
+        Contenedor.add(CMBXCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 150, 30));
 
         btnAñadir.setBackground(new java.awt.Color(250, 125, 85));
         btnAñadir.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -229,7 +226,7 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 btnAñadirActionPerformed(evt);
             }
         });
-        Contenedor.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, 90, 30));
+        Contenedor.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, 110, 30));
 
         btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
         btnCancelar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -240,21 +237,37 @@ public class AgregarEstudiante extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        Contenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 90, 30));
+        Contenedor.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 600, 110, 30));
+
+        jPanel1.setBackground(new java.awt.Color(250, 125, 85));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Añadir Estudiante");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+        );
+
+        Contenedor.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();
@@ -357,6 +370,7 @@ public class AgregarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtAcudiente;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtCorreo;

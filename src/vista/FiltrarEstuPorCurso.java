@@ -37,14 +37,16 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
 
         JPCurso = new javax.swing.JPanel();
         CMBXCurso = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnFiltrar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         JPCurso.setBackground(new java.awt.Color(255, 255, 255));
+        JPCurso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 125, 85)));
         JPCurso.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -56,15 +58,14 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
         });
         JPCurso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CMBXCurso.setBorder(null);
-        JPCurso.add(CMBXCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, -1));
-
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel4.setText("Curso:");
-        JPCurso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, 40));
+        CMBXCurso.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        CMBXCurso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 125, 85)));
+        CMBXCurso.setKeySelectionManager(null);
+        CMBXCurso.setOpaque(false);
+        JPCurso.add(CMBXCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 250, 40));
 
         btnCancelar.setBackground(new java.awt.Color(250, 125, 85));
-        btnCancelar.setFont(new java.awt.Font("Roboto", 1, 11)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +73,10 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        JPCurso.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 123, 80, 30));
+        JPCurso.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 100, 40));
 
         btnFiltrar.setBackground(new java.awt.Color(250, 125, 85));
-        btnFiltrar.setFont(new java.awt.Font("Roboto", 1, 11)); // NOI18N
+        btnFiltrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnFiltrar.setForeground(new java.awt.Color(255, 255, 255));
         btnFiltrar.setText("Filtrar");
         btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
@@ -83,17 +84,37 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
                 btnFiltrarActionPerformed(evt);
             }
         });
-        JPCurso.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 123, 80, 30));
+        JPCurso.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 100, 40));
+
+        jPanel1.setBackground(new java.awt.Color(250, 125, 85));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Filtrar por curso");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        JPCurso.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+            .addComponent(JPCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+            .addComponent(JPCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
 
         pack();
@@ -166,5 +187,6 @@ public class FiltrarEstuPorCurso extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnFiltrar;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

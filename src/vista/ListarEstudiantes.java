@@ -50,9 +50,12 @@ public class ListarEstudiantes extends javax.swing.JPanel {
         btnFlitrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         CMBXSelect = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblEstudiantes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tblEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -60,10 +63,23 @@ public class ListarEstudiantes extends javax.swing.JPanel {
             new String [] {
                 "Identificacion", "Nombre", "Apellido", "Edad", "direccion", "Genero", "Correo", "Telefono", "Acudiente", "Telfono Acu.", "Profesor", "Curso"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblEstudiantes.setGridColor(new java.awt.Color(255, 255, 255));
-        tblEstudiantes.setSelectionBackground(new java.awt.Color(242, 149, 107));
-        tblEstudiantes.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tblEstudiantes.setOpaque(false);
+        tblEstudiantes.setSelectionBackground(new java.awt.Color(250, 125, 85));
+        tblEstudiantes.setSelectionForeground(new java.awt.Color(243, 243, 243));
+        tblEstudiantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblEstudiantes.getTableHeader().setResizingAllowed(false);
+        tblEstudiantes.getTableHeader().setReorderingAllowed(false);
         tblEstudiantes.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -80,6 +96,8 @@ public class ListarEstudiantes extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblEstudiantes);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 93, 890, 450));
+
         btnAgregar.setBackground(new java.awt.Color(250, 125, 85));
         btnAgregar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,6 +108,7 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnAgregarActionPerformed(evt);
             }
         });
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 35));
 
         btnActualizar.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -101,6 +120,7 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnActualizarActionPerformed(evt);
             }
         });
+        add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 110, 35));
 
         btnBorrar.setBackground(new java.awt.Color(250, 125, 85));
         btnBorrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -117,6 +137,7 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnBorrarActionPerformed(evt);
             }
         });
+        add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 110, 35));
 
         btnRecargar.setBackground(new java.awt.Color(250, 125, 85));
         btnRecargar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -133,6 +154,7 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnRecargarActionPerformed(evt);
             }
         });
+        add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 110, 35));
 
         btnFlitrar.setBackground(new java.awt.Color(250, 125, 85));
         btnFlitrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -144,54 +166,19 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnFlitrarActionPerformed(evt);
             }
         });
+        add(btnFlitrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 110, 35));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         jLabel1.setText("Filtrar por:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 60, -1, -1));
 
         CMBXSelect.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         CMBXSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso", "Profesor" }));
+        add(CMBXSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(759, 57, 104, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnFlitrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(CMBXSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 37, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFlitrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(CMBXSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
-        );
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 580));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblEstudiantesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblEstudiantesAncestorAdded
@@ -253,6 +240,7 @@ public class ListarEstudiantes extends javax.swing.JPanel {
     private javax.swing.JButton btnFlitrar;
     private javax.swing.JButton btnRecargar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblEstudiantes;
     // End of variables declaration//GEN-END:variables

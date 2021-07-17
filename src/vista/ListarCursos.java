@@ -49,8 +49,9 @@ public class ListarCursos extends javax.swing.JPanel {
         btnFlitrar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbLCursos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tbLCursos.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tbLCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -58,8 +59,21 @@ public class ListarCursos extends javax.swing.JPanel {
             new String [] {
                 "Codigo", "Nombre", "Cantidad", "Profesor"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tbLCursos.setGridColor(new java.awt.Color(255, 255, 255));
+        tbLCursos.setSelectionBackground(new java.awt.Color(250, 125, 85));
+        tbLCursos.setSelectionForeground(new java.awt.Color(252, 251, 251));
+        tbLCursos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbLCursos.getTableHeader().setResizingAllowed(false);
+        tbLCursos.getTableHeader().setReorderingAllowed(false);
         tbLCursos.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -71,6 +85,8 @@ public class ListarCursos extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbLCursos);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 96, 890, 450));
+
         jButton1.setBackground(new java.awt.Color(250, 125, 85));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,6 +97,7 @@ public class ListarCursos extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 35));
 
         btnActualizar.setBackground(new java.awt.Color(250, 125, 85));
         btnActualizar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -92,6 +109,7 @@ public class ListarCursos extends javax.swing.JPanel {
                 btnActualizarActionPerformed(evt);
             }
         });
+        add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 110, 35));
 
         btnBorrar.setBackground(new java.awt.Color(250, 125, 85));
         btnBorrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -103,6 +121,7 @@ public class ListarCursos extends javax.swing.JPanel {
                 btnBorrarActionPerformed(evt);
             }
         });
+        add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 110, 35));
 
         btnRecargar.setBackground(new java.awt.Color(250, 125, 85));
         btnRecargar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -114,6 +133,7 @@ public class ListarCursos extends javax.swing.JPanel {
                 btnRecargarActionPerformed(evt);
             }
         });
+        add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 110, 35));
 
         btnFlitrar.setBackground(new java.awt.Color(250, 125, 85));
         btnFlitrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -125,42 +145,7 @@ public class ListarCursos extends javax.swing.JPanel {
                 btnFlitrarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnFlitrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 268, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFlitrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRecargar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        add(btnFlitrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 110, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbLCursosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tbLCursosAncestorAdded
