@@ -124,7 +124,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         JpBg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 3, 20)); // NOI18N
-        jLabel2.setText("Menú de pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        jLabel2.setText("Menú de prueba");
         JpBg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

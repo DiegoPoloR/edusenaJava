@@ -20,6 +20,9 @@ public class Dashboard extends javax.swing.JFrame {
     ListarEstudiantes listarEsu = new ListarEstudiantes();
     ListarProfesores listarProf = new ListarProfesores();
     ListarCursos listarCursos = new ListarCursos();
+    int mouseX;
+    int mouseY;
+    int JPMenuTOP_Len = 314;
     /**
      * Creates new form dashboard
      */
@@ -70,7 +73,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        JPContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        JPContenedor.setBackground(new java.awt.Color(255, 153, 102));
         JPContenedor.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -80,18 +83,30 @@ public class Dashboard extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        JPContenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(235, 235, 235));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel6MouseDragged(evt);
+            }
+        });
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel6MousePressed(evt);
+            }
+        });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("Bienvedido");
 
-        txtUsuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtUsuario.setText("Usuario");
 
+        txtFecha.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         txtFecha.setText("Fecha");
 
-        JPSalir.setBackground(new java.awt.Color(153, 153, 153));
+        JPSalir.setBackground(new java.awt.Color(255, 153, 102));
         JPSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JPSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,7 +129,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
         JPSalirLayout.setVerticalGroup(
             JPSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -124,36 +139,47 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(txtFecha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFecha)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 653, Short.MAX_VALUE)
-                        .addComponent(JPSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(520, 520, 520))
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 687, Short.MAX_VALUE)
+                .addComponent(JPSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFecha)
-                .addGap(31, 31, 31))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JPSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtUsuario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFecha)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(JPSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))))
         );
+
+        JPContenedor.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 1000, 120));
 
         JPFondoMenu.setBackground(new java.awt.Color(242, 149, 107));
 
         JPMenuTOP.setBackground(new java.awt.Color(255, 144, 103));
+        JPMenuTOP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                JPMenuTOPMouseDragged(evt);
+            }
+        });
+        JPMenuTOP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                JPMenuTOPMousePressed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edusenaBlanco.png"))); // NOI18N
 
@@ -181,7 +207,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(JPMenuTOPLayout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(jLabel1)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPMenuTOPLayout.setVerticalGroup(
             JPMenuTOPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +218,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(241, 155, 114));
+        jPanel4.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JPInicio.setBackground(new java.awt.Color(241, 155, 114));
         JPInicio.setToolTipText("");
@@ -221,21 +248,21 @@ public class Dashboard extends javax.swing.JFrame {
         JPInicioLayout.setHorizontalGroup(
             JPInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPInicioLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(30, 30, 30)
                 .addComponent(iconInicio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPInicioLayout.setVerticalGroup(
             JPInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPInicioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(JPInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(iconInicio))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(iconInicio)
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel4.add(JPInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, -1));
 
         jPanel5.setBackground(new java.awt.Color(241, 155, 114));
         jPanel5.setToolTipText("");
@@ -264,21 +291,18 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(26, 26, 26)
                 .addComponent(iconEstudiantes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconEstudiantes)
-                    .addComponent(jLabel3))
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(iconEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 310, -1));
 
         jPProfesores.setBackground(new java.awt.Color(241, 155, 114));
         jPProfesores.setToolTipText("");
@@ -310,18 +334,15 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPProfesoresLayout.setVerticalGroup(
             jPProfesoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPProfesoresLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPProfesoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel6))
-                .addGap(21, 21, 21))
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel4.add(jPProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 310, -1));
 
         JPCursos.setBackground(new java.awt.Color(241, 155, 114));
         JPCursos.setToolTipText("");
@@ -350,43 +371,18 @@ public class Dashboard extends javax.swing.JFrame {
         JPCursosLayout.setHorizontalGroup(
             JPCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPCursosLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
         );
         JPCursosLayout.setVerticalGroup(
             JPCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPCursosLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(JPCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel7))
-                .addGap(21, 21, 21))
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPProfesores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(JPInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel4.add(JPCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 310, 60));
 
         javax.swing.GroupLayout JPFondoMenuLayout = new javax.swing.GroupLayout(JPFondoMenu);
         JPFondoMenu.setLayout(JPFondoMenuLayout);
@@ -400,9 +396,11 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(JPFondoMenuLayout.createSequentialGroup()
                 .addComponent(JPMenuTOP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 287, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 291, Short.MAX_VALUE))
         );
+
+        JPContenedor.add(JPFondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 680));
 
         tabContSesiones.setBackground(new java.awt.Color(242, 149, 107));
         tabContSesiones.setForeground(new java.awt.Color(255, 255, 255));
@@ -415,37 +413,21 @@ public class Dashboard extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-
-        javax.swing.GroupLayout JPContenedorLayout = new javax.swing.GroupLayout(JPContenedor);
-        JPContenedor.setLayout(JPContenedorLayout);
-        JPContenedorLayout.setHorizontalGroup(
-            JPContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPContenedorLayout.createSequentialGroup()
-                .addComponent(JPFondoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(JPContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tabContSesiones, javax.swing.GroupLayout.PREFERRED_SIZE, 1006, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        JPContenedorLayout.setVerticalGroup(
-            JPContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPFondoMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(JPContenedorLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabContSesiones))
-        );
+        JPContenedor.add(tabContSesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 1000, 560));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 1322, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(JPContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(JPContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -453,79 +435,99 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JPContenedorAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JPContenedorAncestorAdded
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String fecha = "Hoy es "+dateFormat.format(date);
+        txtFecha.setText(fecha);
+
+    }//GEN-LAST:event_JPContenedorAncestorAdded
+
+    private void tabContSesionesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabContSesionesAncestorAdded
+
+        tabContSesiones.addTab("Inicio", inicio);
+        tabContSesiones.addTab("Estudiantes", listarEsu);
+        tabContSesiones.addTab("Profesores", listarProf);
+        tabContSesiones.addTab("Cursos", listarCursos);
+
+        tabContSesiones.setSelectedComponent(inicio);
+    }//GEN-LAST:event_tabContSesionesAncestorAdded
+
     private void JPCursosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseExited
         JPCursos.setBackground(new Color(241,155,114));
-
     }//GEN-LAST:event_JPCursosMouseExited
 
     private void JPCursosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseEntered
         JPCursos.setBackground(new Color(236,183,147));
-
     }//GEN-LAST:event_JPCursosMouseEntered
+
+    private void JPCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseClicked
+        tabContSesiones.setSelectedComponent(listarCursos);
+    }//GEN-LAST:event_JPCursosMouseClicked
 
     private void jPProfesoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseExited
         jPProfesores.setBackground(new Color(241,155,114));;
     }//GEN-LAST:event_jPProfesoresMouseExited
 
     private void jPProfesoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseEntered
-       jPProfesores.setBackground(new Color(236,183,147));
+        jPProfesores.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_jPProfesoresMouseEntered
+
+    private void jPProfesoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseClicked
+
+        tabContSesiones.setSelectedComponent(listarProf);
+    }//GEN-LAST:event_jPProfesoresMouseClicked
 
     private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
         jPanel5.setBackground(new Color(241,155,114));
     }//GEN-LAST:event_jPanel5MouseExited
 
     private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
-       jPanel5.setBackground(new Color(236,183,147));
+        jPanel5.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_jPanel5MouseEntered
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+
+        tabContSesiones.setSelectedComponent(listarEsu);
+    }//GEN-LAST:event_jPanel5MouseClicked
 
     private void JPInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPInicioMouseExited
         JPInicio.setBackground(new Color(241,155,114));
     }//GEN-LAST:event_JPInicioMouseExited
 
     private void JPInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPInicioMouseEntered
-       JPInicio.setBackground(new Color(236,183,147));
+        JPInicio.setBackground(new Color(236,183,147));
     }//GEN-LAST:event_JPInicioMouseEntered
 
-    private void JPContenedorAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JPContenedorAncestorAdded
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String fecha = "Hoy es "+dateFormat.format(date);
-        txtFecha.setText(fecha);     
-       
-    }//GEN-LAST:event_JPContenedorAncestorAdded
-
-    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-           
-        tabContSesiones.setSelectedComponent(listarEsu);
-    }//GEN-LAST:event_jPanel5MouseClicked
-
-    private void jPProfesoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPProfesoresMouseClicked
-            
-        tabContSesiones.setSelectedComponent(listarProf);
-    }//GEN-LAST:event_jPProfesoresMouseClicked
-
-    private void JPCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPCursosMouseClicked
-        tabContSesiones.setSelectedComponent(listarCursos);
-    }//GEN-LAST:event_JPCursosMouseClicked
-
-    private void tabContSesionesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabContSesionesAncestorAdded
-        
-        tabContSesiones.addTab("Inicio", inicio);
-        tabContSesiones.addTab("Estudiantes", listarEsu);    
-        tabContSesiones.addTab("Profesores", listarProf);    
-        tabContSesiones.addTab("Cursos", listarCursos);
-            
-        tabContSesiones.setSelectedComponent(inicio);
-    }//GEN-LAST:event_tabContSesionesAncestorAdded
-
     private void JPInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPInicioMouseClicked
-       tabContSesiones.setSelectedComponent(inicio);
+        tabContSesiones.setSelectedComponent(inicio);
     }//GEN-LAST:event_JPInicioMouseClicked
 
     private void JPSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSalirMouseClicked
         System.exit(0);
     }//GEN-LAST:event_JPSalirMouseClicked
+
+    private void jPanel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel6MousePressed
+
+    private void JPMenuTOPMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPMenuTOPMousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_JPMenuTOPMousePressed
+
+    private void jPanel6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - (mouseX+JPMenuTOP_Len), y - mouseY);
+    }//GEN-LAST:event_jPanel6MouseDragged
+
+    private void JPMenuTOPMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPMenuTOPMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - mouseX, y - mouseY);
+    }//GEN-LAST:event_JPMenuTOPMouseDragged
 
     /**
      * @param args the command line arguments
@@ -589,7 +591,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lblSalir;
-    public javax.swing.JTabbedPane tabContSesiones;
+    private javax.swing.JTabbedPane tabContSesiones;
     private javax.swing.JLabel txtFecha;
     private javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
