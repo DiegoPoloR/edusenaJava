@@ -3,6 +3,7 @@ package vista;
 import controlador.LoginCtrl;
 import controlador.coordinador;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 
 public class VentanaLogin extends javax.swing.JFrame {
@@ -19,6 +20,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     public VentanaLogin() {
         initComponents();
         setLocationRelativeTo(this);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/edusenaBlanco.png")));
     }
 
     /**

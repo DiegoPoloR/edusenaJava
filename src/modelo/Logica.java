@@ -3,12 +3,11 @@ package modelo;
 import controlador.coordinador;
 import javax.swing.JOptionPane;
 import vista.AlertaError;
-import vista.VentanaMenu;
+
 
 public class Logica {
     private coordinador miCoordinador;
     AlertaError mialerta2 = new AlertaError();
-    VentanaMenu miVentana2 = new VentanaMenu();
     public int CalcPositionX(int x1, int x2){
         return x1-x2;
     }

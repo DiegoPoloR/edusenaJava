@@ -52,9 +52,9 @@ public class EstudiantesDAO {
                 String direccionEstudiante = rs.getString("direccion_estu");                       
                 String generoEstudiante = rs.getString("genero_estu"); 
                 String correoEstudiante = rs.getString("correo_estu");
-                int telefonoEstudiante = rs.getInt("telefono_estu");                          
+                String telefonoEstudiante = rs.getString("telefono_estu");                          
                 String nombreAcudiente = rs.getString("nombre_acu_estu");
-                int telefonoAcudiente = rs.getInt("telefono_acu_estu");
+                String telefonoAcudiente = rs.getString("telefono_acu_estu");
                 String nombreCurso = rs.getString("nombre_curso");
                 String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
                 
@@ -98,9 +98,9 @@ public class EstudiantesDAO {
             pstm.setString(5, estudiante.getDireccion());    
             pstm.setString(6, estudiante.getGenero());         
             pstm.setString(7, estudiante.getCorreo());          
-            pstm.setInt(8, estudiante.getTelefono());           
+            pstm.setString(8, estudiante.getTelefono());           
             pstm.setString(9, estudiante.getNombreAcu());       
-            pstm.setInt(10, estudiante.getTelfAcu());           
+            pstm.setString(10, estudiante.getTelfAcu());           
             pstm.setInt(11, estudiante.getProfesorID());
             pstm.setInt(12, estudiante.getCursoID());
             
@@ -138,9 +138,9 @@ public class EstudiantesDAO {
             pstm.setString(4, estudiante.getDireccion());    
             pstm.setString(5, estudiante.getGenero());         
             pstm.setString(6, estudiante.getCorreo());          
-            pstm.setInt(7, estudiante.getTelefono());           
+            pstm.setString(7, estudiante.getTelefono());           
             pstm.setString(8, estudiante.getNombreAcu());       
-            pstm.setInt(9, estudiante.getTelfAcu());           
+            pstm.setString(9, estudiante.getTelfAcu());           
             pstm.setInt(10, estudiante.getProfesorID());
             pstm.setInt(11, estudiante.getCursoID());
             pstm.setInt(12, estudiante.getIdentificacion()); 
@@ -222,9 +222,9 @@ public class EstudiantesDAO {
                 String direccionEstudiante = rs.getString("direccion_estu");                       
                 String generoEstudiante = rs.getString("genero_estu"); 
                 String correoEstudiante = rs.getString("correo_estu");
-                int telefonoEstudiante = rs.getInt("telefono_estu");                          
+                String telefonoEstudiante = rs.getString("telefono_estu");                          
                 String nombreAcudiente = rs.getString("nombre_acu_estu");
-                int telefonoAcudiente = rs.getInt("telefono_acu_estu");
+                String telefonoAcudiente = rs.getString("telefono_acu_estu");
                 String nombreCurso = rs.getString("nombre_curso");
                 String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
                 
@@ -277,9 +277,9 @@ public class EstudiantesDAO {
                 String direccionEstudiante = rs.getString("direccion_estu");                       
                 String generoEstudiante = rs.getString("genero_estu"); 
                 String correoEstudiante = rs.getString("correo_estu");
-                int telefonoEstudiante = rs.getInt("telefono_estu");                          
+                String telefonoEstudiante = rs.getString("telefono_estu");                          
                 String nombreAcudiente = rs.getString("nombre_acu_estu");
-                int telefonoAcudiente = rs.getInt("telefono_acu_estu");
+                String telefonoAcudiente = rs.getString("telefono_acu_estu");
                 String nombreCurso = rs.getString("nombre_curso");
                 String nombreProfesor = rs.getString("nombres_prof") + " " +rs.getString("apellidos_prof") ;
                 

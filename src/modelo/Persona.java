@@ -19,9 +19,9 @@ public class Persona {
     private String direccion; 
     private String genero; 
     private String correo; 
-    private int telefono; 
+    private String telefono; 
 
-    public Persona(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono) {
+    public Persona(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -32,7 +32,7 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public Persona(String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono) {
+    public Persona(String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
@@ -102,11 +102,11 @@ public class Persona {
         this.correo = correo;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

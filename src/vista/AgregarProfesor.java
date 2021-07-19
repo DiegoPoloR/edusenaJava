@@ -240,7 +240,7 @@ public class AgregarProfesor extends javax.swing.JFrame {
         String genero = (String)CMBXGenero.getSelectedItem();
         
          try {
-            Profesor prof = new Profesor(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), Integer.parseInt(txtTelefono.getText()));        
+            Profesor prof = new Profesor(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), txtTelefono.getText());        
             profCtrl = new ProfesorCtrl();
             boolean agregado = profCtrl.setEstudiantes(prof);
             if(agregado) this.ActualizarDatosTabla();

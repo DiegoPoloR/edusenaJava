@@ -47,10 +47,10 @@ public class ListarEstudiantes extends javax.swing.JPanel {
         btnActualizar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnRecargar = new javax.swing.JButton();
-        btnFlitrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        CMBXSelect = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
+        CMBXSelect = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        btnFlitrar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -156,6 +156,17 @@ public class ListarEstudiantes extends javax.swing.JPanel {
         });
         add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 110, 35));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CMBXSelect.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        CMBXSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso", "Profesor" }));
+        jPanel1.add(CMBXSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 104, 35));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel1.setText("Filtrar por:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, 35));
+
         btnFlitrar.setBackground(new java.awt.Color(250, 125, 85));
         btnFlitrar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnFlitrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,18 +177,8 @@ public class ListarEstudiantes extends javax.swing.JPanel {
                 btnFlitrarActionPerformed(evt);
             }
         });
-        add(btnFlitrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 110, 35));
+        jPanel1.add(btnFlitrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, 110, 35));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setText("Filtrar por:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 60, -1, -1));
-
-        CMBXSelect.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        CMBXSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso", "Profesor" }));
-        add(CMBXSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(759, 57, 104, -1));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 580));
     }// </editor-fold>//GEN-END:initComponents
 

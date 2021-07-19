@@ -15,7 +15,7 @@ import javax.swing.JComboBox;
 public class Estudiante extends Persona{
     
     private String nombreAcu; 
-    private int telfAcu; 
+    private String telfAcu; 
     private String nomProfesor;
     private String nomCurso; 
     private int profesorID;
@@ -27,7 +27,7 @@ public class Estudiante extends Persona{
 
 
     //para llevar datos de la vista al controlador para insertar
-    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, JComboBox<String> profesorCMBX, JComboBox<String> cursoCMBX, ComboBox profesorCombox, ComboBox cursosCombox) {    
+    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono, String nombreAcu, String telfAcu, JComboBox<String> profesorCMBX, JComboBox<String> cursoCMBX, ComboBox profesorCombox, ComboBox cursosCombox) {    
         super(identificacion, nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
         this.telfAcu = telfAcu;
@@ -40,7 +40,7 @@ public class Estudiante extends Persona{
 
     //para mostrar
 
-    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, String nomProfesor, String nomCurso) {
+    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono, String nombreAcu, String telfAcu, String nomProfesor, String nomCurso) {
         super(identificacion, nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
         this.telfAcu = telfAcu;
@@ -49,7 +49,7 @@ public class Estudiante extends Persona{
     }
     
     //´para insertar
-    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, int profesorID, int cursoID) {    
+    public Estudiante(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono, String nombreAcu, String telfAcu, int profesorID, int cursoID) {    
         super(identificacion, nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
         this.telfAcu = telfAcu;
@@ -59,7 +59,7 @@ public class Estudiante extends Persona{
 
     //para actualizar
 
-    public Estudiante(String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono, String nombreAcu, int telfAcu, int profesorID, int cursoID) {
+    public Estudiante(String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono, String nombreAcu, String telfAcu, int profesorID, int cursoID) {
         super(nombre, apellidos, edad, direccion, genero, correo, telefono);
         this.nombreAcu = nombreAcu;
         this.telfAcu = telfAcu;
@@ -83,11 +83,11 @@ public class Estudiante extends Persona{
         this.nombreAcu = nombreAcu;
     }
 
-    public int getTelfAcu() {
+    public String getTelfAcu() {
         return telfAcu;
     }
 
-    public void setTelfAcu(int telfAcu) {
+    public void setTelfAcu(String telfAcu) {
         this.telfAcu = telfAcu;
     }
 

@@ -11,11 +11,11 @@ package modelo;
  */
 public class Profesor extends Persona {
 
-    public Profesor(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono) {
+    public Profesor(int identificacion, String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono) {
         super(identificacion, nombre, apellidos, edad, direccion, genero, correo, telefono);
     }
 
-    public Profesor(String nombre, String apellidos, int edad, String direccion, String genero, String correo, int telefono) {
+    public Profesor(String nombre, String apellidos, int edad, String direccion, String genero, String correo, String telefono) {
         super(nombre, apellidos, edad, direccion, genero, correo, telefono);
     }
 

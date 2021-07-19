@@ -238,7 +238,7 @@ public class ActualizarProfesor extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String genero = (String)CMBXGenero.getSelectedItem();      
          try {
-            Profesor prof = new Profesor(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), Integer.parseInt(txtTelefono.getText()));        
+            Profesor prof = new Profesor(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), txtTelefono.getText());        
             profeCtrl = new ProfesorCtrl();
             boolean actualizado = profeCtrl.updateProfesor(prof);
             if(actualizado)this.ActualizarDatosTabla();               

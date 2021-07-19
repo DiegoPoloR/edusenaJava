@@ -5,12 +5,12 @@ import vista.AlertExit;
 import vista.AlertaContraseña;
 import vista.AlertaError;
 import vista.VentanaLogin;
-import vista.VentanaMenu;
+
 
 public class coordinador {
     private Logica milogica;
     private VentanaLogin mivista;
-    private VentanaMenu mivista2;
+    
     private AlertaError miAlerta1;
     private AlertaContraseña miAlerta2;
     private AlertExit miAlerta3;
@@ -55,9 +55,6 @@ public class coordinador {
        this.miAlerta3=mialerta3;
     }
 
-    public void setVentana2(VentanaMenu miventana2) {
-        this.mivista2=miventana2;
-    }
 
     public boolean InicioSesion(String Username, String Password) {
         String User = Username;

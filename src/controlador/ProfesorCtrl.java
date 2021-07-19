@@ -93,7 +93,7 @@ public class ProfesorCtrl {
             String direccion = tblEstudiantes.getValueAt(fila, 4).toString();
             String genero = tblEstudiantes.getValueAt(fila, 5).toString();
             String correo = tblEstudiantes.getValueAt(fila, 6).toString();
-            int telefono = Integer.parseInt((String)tblEstudiantes.getValueAt(fila, 7).toString());
+            String telefono = tblEstudiantes.getValueAt(fila, 7).toString();
 
                 
             profe = new Profesor(identificacion,nombres,apellidos,edad, direccion,genero, correo, telefono);
@@ -125,7 +125,7 @@ public class ProfesorCtrl {
         txt.get(3).setText(Integer.toString(p.getEdad()));
         txt.get(4).setText(p.getDireccion());
         txt.get(5).setText(p.getCorreo());
-        txt.get(6).setText(Integer.toString(p.getTelefono()));
+        txt.get(6).setText(p.getTelefono());
     
         cmbx.setSelectedItem(p.getGenero());              
      }   

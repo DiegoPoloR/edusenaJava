@@ -5,9 +5,9 @@
  */
 package vista;
 
-import controlador.CursoCtrl;
-import controlador.EstudianteCtrl;
+
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,6 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/assets/edusenaBlanco.png")));
         
         
         

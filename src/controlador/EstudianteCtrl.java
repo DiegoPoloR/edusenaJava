@@ -133,9 +133,9 @@ public class EstudianteCtrl {
             String direccion = tblEstudiantes.getValueAt(fila, 4).toString();
             String genero = tblEstudiantes.getValueAt(fila, 5).toString();
             String correo = tblEstudiantes.getValueAt(fila, 6).toString();
-            int telefono = Integer.parseInt((String)tblEstudiantes.getValueAt(fila, 7).toString());
+            String telefono = tblEstudiantes.getValueAt(fila, 7).toString();
             String acudiente = tblEstudiantes.getValueAt(fila, 8).toString();
-            int telefonoAcu = Integer.parseInt((String)tblEstudiantes.getValueAt(fila, 9).toString());
+            String telefonoAcu = tblEstudiantes.getValueAt(fila, 9).toString();
             String profesor = tblEstudiantes.getValueAt(fila, 10).toString();
             String curso = tblEstudiantes.getValueAt(fila, 11).toString();
                 
@@ -168,9 +168,9 @@ public class EstudianteCtrl {
         txt.get(3).setText(Integer.toString(e.getEdad()));
         txt.get(4).setText(e.getDireccion());
         txt.get(5).setText(e.getCorreo());
-        txt.get(6).setText(Integer.toString(e.getTelefono()));
+        txt.get(6).setText(e.getTelefono());
         txt.get(7).setText(e.getNombreAcu());
-        txt.get(8).setText(Integer.toString(e.getTelfAcu()));
+        txt.get(8).setText(e.getTelfAcu());
          
         
         cmbxInstace.get(0).getProfesoresComboBox();     

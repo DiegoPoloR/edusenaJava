@@ -53,7 +53,7 @@ public class ProfesorDAO {
                 String direccion = rs.getString("direccion_prof");          
                 String genero = rs.getString("genero_prof"); 
                 String correo = rs.getString("correo_prof");
-                int telefono = rs.getInt("telefono_prof");                          
+                String telefono = rs.getString("telefono_prof");                          
             
                
 
@@ -97,7 +97,7 @@ public class ProfesorDAO {
             pstm.setString(5, p.getDireccion());  
             pstm.setString(6, p.getGenero());
             pstm.setString(7, p.getCorreo()); 
-            pstm.setInt   (8, p.getTelefono());
+            pstm.setString   (8, p.getTelefono());
                   
           //Nos regresa el numero de registros afectados.
             registro = pstm.executeUpdate();
@@ -134,7 +134,7 @@ public class ProfesorDAO {
             pstm.setString(4, profesor.getDireccion());    
             pstm.setString(5, profesor.getGenero());         
             pstm.setString(6, profesor.getCorreo());          
-            pstm.setInt(7, profesor.getTelefono());           
+            pstm.setString(7, profesor.getTelefono());           
             pstm.setInt(8, profesor.getIdentificacion()); 
        
             //Nos regresa el numero de registros afectados.

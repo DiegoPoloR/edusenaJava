@@ -300,7 +300,7 @@ public class AgregarEstudiante extends javax.swing.JFrame {
         String genero = (String)CMBXGenero.getSelectedItem();
       
         try {
-            Estudiante estu = new Estudiante(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), Integer.parseInt(txtTelefono.getText()),txtAcudiente.getText() , Integer.parseInt(txtTelfAcu.getText()), CMBXProfesor,CMBXCurso ,  comboxProf, comboxCurso);        
+            Estudiante estu = new Estudiante(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), txtTelefono.getText(),txtAcudiente.getText() , txtTelfAcu.getText(), CMBXProfesor,CMBXCurso ,  comboxProf, comboxCurso);        
             EstudianteCtrl addEstu = new EstudianteCtrl();
             boolean agregado = addEstu.setEstudiantes(estu);
             if(agregado) ActualizarDatosTabla();

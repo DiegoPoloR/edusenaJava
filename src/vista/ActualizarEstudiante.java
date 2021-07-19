@@ -347,7 +347,7 @@ public class ActualizarEstudiante extends javax.swing.JFrame {
         String genero = (String)CMBXGenero.getSelectedItem();
        
         try {
-            Estudiante estudiante = new Estudiante(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), Integer.parseInt(txtTelefono.getText()),txtAcudiente.getText() , Integer.parseInt(txtTelfAcu.getText()), CMBXProfesor,CMBXCurso ,  comboxProf, comboxCurso);        
+            Estudiante estudiante = new Estudiante(Integer.parseInt(txtIdentificacion.getText()), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtDireccion.getText(), genero, txtCorreo.getText(), txtTelefono.getText(),txtAcudiente.getText() , txtTelfAcu.getText(), CMBXProfesor,CMBXCurso ,  comboxProf, comboxCurso);        
             EstudianteCtrl updateEstu = new EstudianteCtrl();
             boolean actualizado = updateEstu.updateEstudiantes(estudiante);
             if(actualizado)this.ActualizarDatosTabla();               
