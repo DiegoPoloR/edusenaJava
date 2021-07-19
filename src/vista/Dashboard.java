@@ -491,7 +491,9 @@ public class Dashboard extends javax.swing.JFrame {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String fecha = "Hoy es "+dateFormat.format(date);
-        txtFecha.setText(fecha);     
+        txtFecha.setText(fecha);  
+        
+       
        
     }//GEN-LAST:event_JPContenedorAncestorAdded
 

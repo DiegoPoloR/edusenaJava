@@ -7,27 +7,31 @@
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AlertaContraseña.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/Dashboard.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ActualizarEstudiante.java</file>
-            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AgregarCurso.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AgregarProfesor.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AgregarCurso.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/controlador/CursoCtrl.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/controlador/ComboBox.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ActualizarCurso.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/modelo/EstudiantesDAO.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/FiltrarEstuPorProfesor.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ListarProfesores.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/modelo/ProfesorDAO.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/modelo/CursoDAO.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/FiltrarEstuPorCurso.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/controlador/EstudianteCtrl.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/EliminarEstudiante.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/EliminarCurso.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/Inicio.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/EliminarProfesor.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ListarEstudiantes.java</file>
-            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ListarCursos.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/controlador/ProfesorCtrl.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ListarCursos.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AgregarEstudiante.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/modelo/Estudiante.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/ActualizarProfesor.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/AlertExit.java</file>
             <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/modelo/Curso.java</file>
+            <file>file:/C:/Users/polod.DESKTOP-9CICAP6/OneDrive/Documentos/NetBeansProjects/Edusena/src/vista/FiltrarCursoPorProfesor.java</file>
         </group>
     </open-files>
 </project-private>
